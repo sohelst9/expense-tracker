@@ -1,0 +1,124 @@
+body {
+  background-color: #e9ecef;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* পেজের কনটেন্ট সেন্টার করার জন্য */
+}
+.wrapper {
+  display: inline-block; /* মূল কনটেন্ট সেন্টারে আনার জন্য */
+  padding-top: 20px;
+  max-width: 700px;
+  width: 100%;
+}
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left; /* কনটেন্ট বাম দিকে সঠিকভাবে সাজানোর জন্য */
+}
+h2 {
+  color: #6c63ff;
+  text-align: center;
+}
+.balance-section {
+  text-align: center;
+  margin: 20px 0;
+}
+.balance-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+.balance {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 5px;
+}
+.income-expense {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.income, .expense {
+  width: 48%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+.income {
+  background-color: #28a745;
+}
+.expense {
+  background-color: #dc3545;
+}
+.history {
+  margin: 20px 0;
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+.history-item:last-child {
+  border-bottom: none;
+}
+.history-item .amount {
+  font-weight: bold;
+}
+.history-item .amount.positive {
+  color: #28a745;
+}
+.history-item .amount.negative {
+  color: #dc3545;
+}
+.add-transaction {
+  margin: 20px 0;
+  text-align: center;
+}
+.add-transaction form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-transaction label {
+  align-self: flex-start;
+  font-weight: bold;
+}
+.add-transaction input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.add-transaction button {
+  width: 100%;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.add-transaction button:hover {
+  background-color: #5a54db;
+}
+/* মোবাইল ডিভাইসের জন্য */
+@media (max-width: 576px) {
+  .container {
+      max-width: 90%;
+      padding: 20px;
+  }
+}
