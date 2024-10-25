@@ -2,8 +2,8 @@
   <div class="wrapper">
     <div class="container">
       <Header />
-      <Balance :balance="balance" />
-      <ExpenseIcomeShow :income="Totalincome" :expense="Totalexpense" />
+      <Balance :balance="+balance" />
+      <ExpenseIcomeShow :income="+Totalincome" :expense="+Totalexpense" />
       <TransactionList :Transactions="Transactions" />
       <TransactionAdd />
 
