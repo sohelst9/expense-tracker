@@ -17,15 +17,31 @@
 import { ref } from 'vue'
 import { useToast } from 'vue-toastification';
 
+//-- variables
 const text = ref('');
 const amount = ref('');
+
+//--define emit  and toast 
+const emit = defineEmits(['TrnxSubmitted']);
 const Toast = useToast();
+
+//-- fucntion to submit transaction
 const TrnxSubmit = () => {
+
+  //---check if text and amount are not empty
   if(!text.value || !amount.value){
     Toast.error('Text and Amount Field are required!');
     return;
   }
-  console.log(text.value)
-  console.log(amount.value)
+
+  // Create a transaction object with the current text and amount values
+  const trnxData = {
+    text: text.value,
+    amount: parseFloat(amount.value)
+  };
+
+  //-- emit the transaction data to parent component
+  emit('TrnxSubmitted', trnxData);
+
 }
 </script>

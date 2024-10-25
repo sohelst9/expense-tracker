@@ -5,7 +5,7 @@
       <Balance :balance="+balance" />
       <ExpenseIcomeShow :income="+Totalincome" :expense="+Totalexpense" />
       <TransactionList :Transactions="Transactions" />
-      <TransactionAdd />
+      <TransactionAdd @TrnxSubmitted="handleTrnxData" />
 
 
     </div>
@@ -25,7 +25,7 @@ const Transactions = ref([
   { id: 1, text: "Bajar", amount: 100.25889 },
   { id: 2, text: "Shoping", amount: 500 },
   { id: 3, text: "Gift", amount: -300 },
-  { id: 3, text: "Gift", amount: -200.58544 },
+  { id: 4, text: "Gift", amount: -200.58544 },
 ]);
 
 //--- total balance 
@@ -54,5 +54,18 @@ const Totalexpense = computed(() => {
     }, 0)
     .toFixed(2);
 });
+
+
+const handleTrnxData = (trnxData) => {
+  Transactions.value.push({
+    id: generateUniqueId(),
+    text: trnxData.text,
+    amount: trnxData.amount
+  });
+};
+
+const generateUniqueId = () => {
+  return Math.floor(Math.random() * 1000000);
+}
 
 </script>
