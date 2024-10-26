@@ -86,7 +86,7 @@ const handleDeletedTrnx = (id) => {
 
 //--save trnx data to local storage
 const saveTrnxData = () => {
-  localStorage.setItem('transactions', JSON.stringify(Transactions.value));
+  localStorage.setItem('Transactions', JSON.stringify(Transactions.value));
 
 }
 
