@@ -70,7 +70,8 @@ const generateUniqueId = () => {
 
 //--- handle delete emit 
 const handleDeletedTrnx = (id) => {
-
+  Transactions.value = Transactions.value.filter((transcation) => transcation.id !== id);
+  toast.success('Transaction Deleted Successfully!');
 }
 
 </script>
