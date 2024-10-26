@@ -29,7 +29,7 @@ const Toast = useToast();
 const TrnxSubmit = () => {
 
   //---check if text and amount are not empty
-  if(!text.value || !amount.value){
+  if (!text.value || !amount.value) {
     Toast.error('Text and Amount Field are required!');
     return;
   }
@@ -42,6 +42,8 @@ const TrnxSubmit = () => {
 
   //-- emit the transaction data to parent component
   emit('TrnxSubmitted', trnxData);
+  text.value = '';
+  amount.value = '';
 
 }
 </script>

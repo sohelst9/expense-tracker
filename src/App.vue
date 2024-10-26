@@ -4,7 +4,7 @@
       <Header />
       <Balance :balance="+balance" />
       <ExpenseIcomeShow :income="+Totalincome" :expense="+Totalexpense" />
-      <TransactionList :Transactions="Transactions" />
+      <TransactionList :Transactions="Transactions" @deletedTrnx="handleDeletedTrnx" />
       <TransactionAdd @TrnxSubmitted="handleTrnxData" />
 
 
@@ -19,14 +19,11 @@ import ExpenseIcomeShow from './components/ExpenseIcomeShow.vue';
 import TransactionList from './components/TransactionList.vue';
 import TransactionAdd from './components/TransactionAdd.vue';
 import { ref, computed } from 'vue';
+import { useToast } from 'vue-toastification';
 
 //---transaction list--
-const Transactions = ref([
-  { id: 1, text: "Bajar", amount: 100.25889 },
-  { id: 2, text: "Shoping", amount: 500 },
-  { id: 3, text: "Gift", amount: -300 },
-  { id: 4, text: "Gift", amount: -200.58544 },
-]);
+const Transactions = ref([]);
+const toast = useToast();
 
 //--- total balance 
 const balance = computed(() => {
@@ -55,17 +52,25 @@ const Totalexpense = computed(() => {
     .toFixed(2);
 });
 
-
+//--- trnx data push trnx list
 const handleTrnxData = (trnxData) => {
   Transactions.value.push({
     id: generateUniqueId(),
     text: trnxData.text,
     amount: trnxData.amount
   });
+
+  toast.success(' Transaction added successfully! ');
 };
 
+//---unique id generate
 const generateUniqueId = () => {
   return Math.floor(Math.random() * 1000000);
+}
+
+//--- handle delete emit 
+const handleDeletedTrnx = (id) => {
+
 }
 
 </script>

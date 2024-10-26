@@ -1,6 +1,6 @@
 body {
   background-color: #e9ecef;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -48,7 +48,8 @@ h2 {
   border-radius: 10px;
   background-color: #f8f9fa;
 }
-.income, .expense {
+.income,
+.expense {
   width: 48%;
   text-align: center;
   padding: 10px;
@@ -82,6 +83,23 @@ h2 {
 .history-item .amount.negative {
   color: #dc3545;
 }
+
+.trnx_delete {
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.trnx_delete:hover {
+  background-color: #d93636;
+}
+
 .add-transaction {
   margin: 20px 0;
   text-align: center;
@@ -115,10 +133,10 @@ h2 {
 .add-transaction button:hover {
   background-color: #5a54db;
 }
-/* মোবাইল ডিভাইসের জন্য */
+
 @media (max-width: 576px) {
   .container {
-      max-width: 90%;
-      padding: 20px;
+    max-width: 90%;
+    padding: 20px;
   }
 }
